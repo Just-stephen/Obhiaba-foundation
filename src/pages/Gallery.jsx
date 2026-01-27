@@ -210,6 +210,15 @@ export default function Gallery() {
         ))}
       </div>
 
+      {activeCategory === 'Season 5' && (
+        <div className="alert alert-info mb-4" style={{ textAlign: 'center', fontSize: '1.1rem', borderRadius: '10px' }}>
+          <h5 style={{ marginBottom: '0.5rem' }}>Impact Story</h5>
+          <p style={{ marginBottom: 0 }}>
+            Over <strong>85 widows</strong> were empowered through this initiative, providing them with support, resources, and hope for a better future.
+          </p>
+        </div>
+      )}
+
       <div className="row mt-4 g-3">
         {categories[activeCategory].map((src, i) => (
           <div key={i} className="col-sm-6 col-md-4 col-lg-3">
