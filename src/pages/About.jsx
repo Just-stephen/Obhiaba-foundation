@@ -19,7 +19,7 @@ export default function About() {
       <section className="mt-4">
         <h4>Founders</h4>
         <ul>
-          <li>Mr Osy Okoeguale</li>
+          <li>Mr Oseyomon Freddie Okoeguale</li>
           <li>Mr Lucky Oghinna</li>
         </ul>
       </section>
