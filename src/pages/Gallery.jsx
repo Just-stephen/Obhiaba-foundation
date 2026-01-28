@@ -187,6 +187,13 @@ const categories = {
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('Season 1');
 
+  // Sort images: banner images first, then others
+  const getSortedImages = (images) => {
+    const bannerImages = images.filter(img => img.toLowerCase().includes('banner'));
+    const otherImages = images.filter(img => !img.toLowerCase().includes('banner'));
+    return [...bannerImages, ...otherImages];
+  };
+
   return (
     <div className="container my-4">
       <h2 className="mb-4 text-center">Gallery</h2>
@@ -220,10 +227,10 @@ export default function Gallery() {
       )}
 
       <div className="row mt-4 g-3">
-        {categories[activeCategory].map((src, i) => (
+        {getSortedImages(categories[activeCategory]).map((src, i) => (
           <div key={i} className="col-sm-6 col-md-4 col-lg-3">
-            <div className="card h-100 shadow-sm" style={{ overflow: 'hidden', borderRadius: '10px', border: 'none' }}>
-              <div style={{ position: 'relative', overflow: 'hidden', paddingBottom: '100%' }}>
+            <div className="card h-100 shadow-sm" style={{ overflow: 'hidden', borderRadius: '10px', border: 'none', backgroundColor: '#f5f5f5' }}>
+              <div style={{ position: 'relative', overflow: 'hidden', paddingBottom: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img 
                   src={src} 
                   alt={`${activeCategory}-${i}`} 
@@ -234,7 +241,7 @@ export default function Gallery() {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
+                    objectFit: 'contain',
                     transition: 'transform 0.3s ease',
                     cursor: 'pointer'
                   }}
