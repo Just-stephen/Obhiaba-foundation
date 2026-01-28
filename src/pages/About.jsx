@@ -4,16 +4,16 @@ export default function About() {
   return (
     <div className="container my-4">
       <h2>About Obhiaba</h2>
-      <p className="lead">Obhiaba Foundation is a non-governmental, denominational, non-profit generating foundation with a great vision and idea that gives opportunity and privilege to individuals to give back to society.</p>
+      <p className="lead">Obhiaba Foundation is a non-governmental, denominational, non-profit organization established with a clear vision to provide individuals with meaningful opportunities to give back to society and contribute to community development.</p>
       
       <section className="mt-4">
         <h4>Our Mission</h4>
-        <p>Our vision is to engage the youths of Esan through sports (football) and reduce crime rate in our society.</p>
+        <p>Our mission is to engage the youth of Esan through sports, particularly football, as a means of empowerment and to contribute to the reduction of crime within our society.</p>
       </section>
 
       <section className="mt-4">
         <h4>About Us</h4>
-        <p>Obhiaba has been running seamlessly and unhindered since 2017, completing over 7 years of dedicated service to the community. We train young athletes, support local initiatives, and compete with pride.</p>
+        <p>Obhiaba Foundation has operated consistently and without interruption since 2019, delivering over seven years of dedicated service to the community. We focus on training young athletes, supporting local initiatives, and representing our community with pride and integrity.</p>
       </section>
 
       <section className="mt-4">
@@ -31,6 +31,8 @@ export default function About() {
           Uromi<br />
           Edo State
         </address>
+        
+
       </section>
     </div>
   );

@@ -1,14 +1,60 @@
 import React, { useState } from 'react';
 import { sponsors } from '../data/sponsors';
 import SponsorCard from '../components/SponsorCard';
+import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 
 export default function Sponsorship() {
-  const [donationAmount, setDonationAmount] = useState(50);
+  const [donationAmount, setDonationAmount] = useState(5000);
+  const [donorEmail, setDonorEmail] = useState('');
+  const [donorName, setDonorName] = useState('');
+  const [donorMessage, setDonorMessage] = useState('');
 
-  const handleDonationSubmit = (e) => {
-    e.preventDefault();
-    alert(`Thank you for your donation of $${donationAmount}! Your support means the world to us.`);
-    setDonationAmount(50);
+  const config = {
+    public_key: process.env.REACT_APP_FLUTTERWAVE_PUBLIC_KEY || 'FLWAVE-YOUR-PUBLIC-KEY',
+    tx_ref: Date.now(),
+    amount: parseInt(donationAmount),
+    currency: 'NGN',
+    payment_options: 'card,mobilemoney,ussd',
+    customer: {
+      email: donorEmail,
+      name: donorName,
+    },
+    customizations: {
+      title: 'Obhiaba Foundation Donation',
+      description: donorMessage || 'Support our mission to empower athletes and communities',
+      logo: 'https://res.cloudinary.com/alchemycodelab/image/upload/v1691000327/obhiaba/logo_u0oc4x.png',
+    },
+  };
+
+  const handleFlutterwave = useFlutterwave(config);
+
+  const handlePayment = () => {
+    if (!donorEmail || !donorName) {
+      alert('Please fill in all required fields');
+      return;
+    }
+
+    if (parseInt(donationAmount) < 100) {
+      alert('Minimum donation amount is ₦100');
+      return;
+    }
+
+    handleFlutterwave({
+      onSuccess: (response) => {
+        console.log(response);
+        alert(`Thank you for your generous donation of ₦${parseInt(donationAmount).toLocaleString()}! Your support means the world to us.`);
+        // Reset form
+        setDonationAmount(5000);
+        setDonorEmail('');
+        setDonorName('');
+        setDonorMessage('');
+        closePaymentModal();
+      },
+      onError: (error) => {
+        console.log(error);
+        alert('Payment failed. Please try again.');
+      },
+    });
   };
 
   return (
@@ -28,19 +74,46 @@ export default function Sponsorship() {
           <div className="col-md-6">
             <div className="card shadow-sm p-4">
               <h4 className="card-title mb-4">Donate Now</h4>
-              <form onSubmit={handleDonationSubmit}>
+              <div>
                 <div className="mb-3">
-                  <label htmlFor="amount" className="form-label">Donation Amount</label>
+                  <label htmlFor="name" className="form-label">Full Name <span className="text-danger">*</span></label>
+                  <input 
+                    type="text" 
+                    className="form-control" 
+                    id="name" 
+                    value={donorName}
+                    onChange={(e) => setDonorName(e.target.value)}
+                    placeholder="Your full name"
+                    required 
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">Email <span className="text-danger">*</span></label>
+                  <input 
+                    type="email" 
+                    className="form-control" 
+                    id="email" 
+                    value={donorEmail}
+                    onChange={(e) => setDonorEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    required 
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="amount" className="form-label">Donation Amount <span className="text-danger">*</span></label>
                   <div className="input-group">
-                    <span className="input-group-text">$</span>
+                    <span className="input-group-text">₦</span>
                     <input 
                       type="number" 
                       className="form-control" 
                       id="amount" 
                       value={donationAmount}
                       onChange={(e) => setDonationAmount(e.target.value)}
-                      min="1"
-                      step="5"
+                      min="100"
+                      step="100"
+                      required
                     />
                   </div>
                 </div>
@@ -48,33 +121,43 @@ export default function Sponsorship() {
                 <div className="mb-3">
                   <label className="form-label">Quick Select</label>
                   <div className="btn-group w-100" role="group">
-                    {[25, 50, 100, 250].map(amount => (
+                    {[5000, 10000, 25000, 50000].map(amount => (
                       <button 
                         key={amount}
                         type="button" 
-                        className={`btn ${donationAmount === amount ? 'btn-primary' : 'btn-outline-primary'}`}
+                        className={`btn btn-sm ${donationAmount === amount ? 'btn-primary' : 'btn-outline-primary'}`}
                         onClick={() => setDonationAmount(amount)}
                       >
-                        ${amount}
+                        ₦{amount.toLocaleString()}
                       </button>
                     ))}
                   </div>
                 </div>
 
                 <div className="mb-3">
-                  <label htmlFor="email" className="form-label">Email</label>
-                  <input type="email" className="form-control" id="email" placeholder="your@email.com" required />
-                </div>
-
-                <div className="mb-3">
                   <label htmlFor="message" className="form-label">Message (Optional)</label>
-                  <textarea className="form-control" id="message" rows="3" placeholder="Tell us why you support us..."></textarea>
+                  <textarea 
+                    className="form-control" 
+                    id="message" 
+                    rows="2" 
+                    value={donorMessage}
+                    onChange={(e) => setDonorMessage(e.target.value)}
+                    placeholder="Tell us why you support us..."
+                  ></textarea>
                 </div>
 
-                <button type="submit" className="btn btn-primary w-100 btn-lg">
-                  Donate ${donationAmount}
+                <button 
+                  type="button"
+                  onClick={handlePayment}
+                  className="btn btn-primary w-100 btn-lg"
+                >
+                  Donate ₦{typeof donationAmount === 'string' ? parseInt(donationAmount).toLocaleString() : donationAmount.toLocaleString()}
                 </button>
-              </form>
+                <p className="text-muted text-center mt-3 small">
+                  💳 Secure payment via Flutterwave<br />
+                  Credit/Debit Card, Mobile Money, USSD
+                </p>
+              </div>
             </div>
           </div>
 
@@ -169,7 +252,7 @@ export default function Sponsorship() {
           </div>
           <div className="col-md-3 text-center mb-3">
             <div className="card shadow-sm p-4">
-              <h3 className="text-primary fw-bold">5</h3>
+              <h3 className="text-primary fw-bold">30</h3>
               <p className="text-muted">Football Teams</p>
             </div>
           </div>
@@ -183,6 +266,13 @@ export default function Sponsorship() {
             <div className="card shadow-sm p-4">
               <h3 className="text-primary fw-bold">10</h3>
               <p className="text-muted">Communities Reached</p>
+            </div>
+          </div>
+           <div className="col-md-3 text-center mb-3">
+            <div className="card shadow-sm p-4">
+              <h3 className="text-primary fw-bold">5</h3>
+              <p className="text-muted">Local Government Areas</p>
+              <p className="text-muted">Esan North-East, Esan South-East, Esan Central, Esan West, Igueben</p>
             </div>
           </div>
         </div>
