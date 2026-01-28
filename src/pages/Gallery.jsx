@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 
 const categories = {
   'Season 1': [
+    '/images/season 1/banner.jpg',
     '/images/season 1/471549557_10232921222686182_739173836218548572_n.jpg',
     '/images/season 1/471551838_10232921206605780_4421052278077894405_n.jpg',
     '/images/season 1/81039916_10219578779853450_7329702968725340160_n.jpg',
-    '/images/season 1/81187389_10219578777973403_431564743468122112_n.jpg',
     '/images/season 1/81192295_10219578973778298_4391166007855546368_n.jpg',
-    '/images/season 1/81435780_10219578776413364_1933589685339160576_n.jpg',
     '/images/season 1/81556669_10219578969338187_8478219816866414592_n.jpg',
     '/images/season 1/81562336_10219578970618219_609851374250754048_n.jpg',
     '/images/season 1/81705001_10219578781253485_5767389704064335872_n.jpg',
@@ -22,29 +21,22 @@ const categories = {
     '/images/season 1/82207907_10219578974058305_5159689408349208576_n.jpg'
   ],
   'Season 2': [
+    '/images/season 2/banner.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.50 (1).jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.50.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.51 (1).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.52 (1).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.52 (2).jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.52 (3).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.53 (1).jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.53 (2).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.53.jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.54 (1).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.54 (2).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.54.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.56 (1).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.56 (2).jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.56.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.57 (1).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.57.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.58.jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.24.59.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.00 (1).jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.01 (1).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.01 (2).jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.01.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.02 (2).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.02.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.03 (1).jpeg',
@@ -52,7 +44,6 @@ const categories = {
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.04 (1).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.04.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.06 (1).jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.07 (1).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.07 (2).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.07 (3).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.07.jpeg',
@@ -61,52 +52,36 @@ const categories = {
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.08.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.09 (1).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.09 (2).jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.09 (3).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.09.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.10 (3).jpeg',
-    '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.10.jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.11 (1).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.11 (2).jpeg',
     '/images/season 2/WhatsApp Image 2026-01-23 at 06.25.11.jpeg'
   ],
   'Season 3': [
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.30.jpeg',
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.31.jpeg',
+    '/images/season 3/banner.jpeg',
     '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.32 (1).jpeg',
     '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.32 (2).jpeg',
     '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.32.jpeg',
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.33.jpeg',
     '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.35.jpeg',
     '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.36 (1).jpeg',
     '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.36 (2).jpeg',
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.36.jpeg',
     '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.37 (1).jpeg',
     '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.37.jpeg',
     '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.38 (1).jpeg',
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.38 (2).jpeg',
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.38.jpeg',
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.39 (1).jpeg',
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.39 (2).jpeg',
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.39.jpeg',
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.40 (1).jpeg',
-    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.40.jpeg'
+    '/images/season 3/WhatsApp Image 2026-01-23 at 06.28.39 (1).jpeg'
   ],
   'Season 4': [
+    '/images/season 4/banner.jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.08 (1).jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.08.jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.09 (1).jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.09 (2).jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.09.jpeg',
-    '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.10 (1).jpeg',
-    '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.10.jpeg',
-    '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.11 (1).jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.11.jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.12.jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.13.jpeg',
-    '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.14 (1).jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.14 (2).jpeg',
-    '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.14.jpeg',
-    '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.15 (1).jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.15.jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.16 (1).jpeg',
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.16 (2).jpeg',
@@ -122,77 +97,42 @@ const categories = {
     '/images/season 4/WhatsApp Image 2026-01-23 at 06.29.20.jpeg'
   ],
   'Season 5': [
+    '/images/season 5/banner.jpeg',
     '/images/season 5/WhatsApp Image 2026-01-23 at 06.30.05.jpeg',
     '/images/season 5/WhatsApp Image 2026-01-23 at 06.30.06.jpeg',
     '/images/season 5/WhatsApp Image 2026-01-23 at 06.30.07.jpeg',
     '/images/season 5/WhatsApp Image 2026-01-23 at 06.30.10.jpeg',
     '/images/season 5/WhatsApp Image 2026-01-23 at 06.30.11.jpeg',
-    '/images/season 5/WhatsApp Image 2026-01-23 at 06.30.12.jpeg',
     '/images/season 5/WhatsApp Image 2026-01-23 at 06.30.13.jpeg',
-    '/images/season 5/WhatsApp Image 2026-01-23 at 06.30.25.jpeg',
     '/images/season 5/WhatsApp Image 2026-01-23 at 06.34.30.jpeg',
     '/images/season 5/WhatsApp Image 2026-01-23 at 06.34.34.jpeg',
-    '/images/season 5/WhatsApp Image 2026-01-23 at 06.34.36.jpeg',
-    '/images/season 5/WhatsApp Image 2026-01-23 at 06.34.38.jpeg'
+    '/images/season 5/WhatsApp Image 2026-01-23 at 06.34.36.jpeg'
   ],
   'Season 6': [
-    '/images/season 6/WhatsApp Image 2026-01-23 at 06.34.56.jpeg',
-    '/images/season 6/WhatsApp Image 2026-01-23 at 06.34.57 (1).jpeg',
-    '/images/season 6/WhatsApp Image 2026-01-23 at 06.34.57.jpeg',
-    '/images/season 6/WhatsApp Image 2026-01-23 at 06.46.24.jpeg',
-    '/images/season 6/WhatsApp Image 2026-01-23 at 06.46.30.jpeg',
-    '/images/season 6/WhatsApp Image 2026-01-23 at 06.46.36.jpeg'
+    '/images/season 6/banner.jpeg',
+    '/images/season 6/WhatsApp Image 2026-01-23 at 06.46.24.jpeg'
   ],
   'Season 7': [
+    '/images/season 7/banner.jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.34.59 (1).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.34.59.jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.00 (1).jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.00 (4).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.00.jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.01 (1).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.01 (2).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.01 (3).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.01.jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.02 (1).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.02 (3).jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.02 (4).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.02.jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.03 (1).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.07 (1).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.08 (1).jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.08 (4).jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.08.jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.09 (1).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.09 (2).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.09 (3).jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.09.jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.10 (1).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.10 (2).jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.10 (3).jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.10.jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.11 (1).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.11 (3).jpeg',
     '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.11.jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.12 (1).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.12 (2).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.12 (3).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.12.jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.13 (1).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.13 (2).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.13 (3).jpeg',
-    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.13.jpeg'
+    '/images/season 7/WhatsApp Image 2026-01-23 at 06.35.12.jpeg'
   ]
 };
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('Season 1');
-
-  // Sort images: banner images first, then others
-  const getSortedImages = (images) => {
-    const bannerImages = images.filter(img => img.toLowerCase().includes('banner'));
-    const otherImages = images.filter(img => !img.toLowerCase().includes('banner'));
-    return [...bannerImages, ...otherImages];
-  };
 
   return (
     <div className="container my-4">
@@ -227,7 +167,7 @@ export default function Gallery() {
       )}
 
       <div className="row mt-4 g-3">
-        {getSortedImages(categories[activeCategory]).map((src, i) => (
+        {categories[activeCategory].map((src, i) => (
           <div key={i} className="col-sm-6 col-md-4 col-lg-3">
             <div className="card h-100 shadow-sm" style={{ overflow: 'hidden', borderRadius: '10px', border: 'none', backgroundColor: '#f5f5f5' }}>
               <div style={{ position: 'relative', overflow: 'hidden', paddingBottom: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
