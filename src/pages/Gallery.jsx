@@ -110,7 +110,13 @@ const categories = {
   ],
   'Season 6': [
     '/images/season 6/banner.jpeg',
-    '/images/season 6/WhatsApp Image 2026-01-23 at 06.46.24.jpeg'
+    '/images/season 6/WhatsApp Image 2026-02-21 at 12.29.08 (1).jpeg',
+    '/images/season 6/WhatsApp Image 2026-02-21 at 12.29.08 (2).jpeg',
+    '/images/season 6/WhatsApp Image 2026-02-21 at 12.29.08.jpeg',
+    '/images/season 6/WhatsApp Image 2026-02-21 at 12.30.56.jpeg',
+    '/images/season 6/WhatsApp Image 2026-02-21 at 12.33.26 (1).jpeg',
+    '/images/season 6/WhatsApp Image 2026-02-21 at 12.33.26.jpeg',
+    '/images/season 6/WhatsApp Image 2026-02-21 at 12.38.45.jpeg'
   ],
   'Season 7': [
     '/images/season 7/banner.jpeg',
