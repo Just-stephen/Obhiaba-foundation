@@ -116,7 +116,20 @@ const categories = {
     '/images/season 6/WhatsApp Image 2026-02-21 at 12.30.56.jpeg',
     '/images/season 6/WhatsApp Image 2026-02-21 at 12.33.26 (1).jpeg',
     '/images/season 6/WhatsApp Image 2026-02-21 at 12.33.26.jpeg',
-    '/images/season 6/WhatsApp Image 2026-02-21 at 12.38.45.jpeg'
+    '/images/season 6/WhatsApp Image 2026-02-21 at 12.38.45.jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 09.56.53 (1).jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 09.56.53.jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 09.56.54 (1).jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 09.56.54 (2).jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 09.56.54.jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 09.58.48.jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 09.58.49.jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 10.00.48 (1).jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 10.00.48.jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 10.00.49 (1).jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 10.00.49 (2).jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 10.00.49.jpeg',
+    '/images/season 6/WhatsApp Image 2026-03-27 at 10.01.44.jpeg'
   ],
   'Season 7': [
     '/images/season 7/banner.jpeg',
@@ -202,3 +215,4 @@ export default function Gallery() {
     </div>
   );
 }
+  
